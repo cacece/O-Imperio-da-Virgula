@@ -1,0 +1,128 @@
+[gd_scene format=3 uid="uid://cksqaa8unttis"]
+
+[ext_resource type="Script" uid="uid://dp4pkde7rh2i3" path="res://creditos.gd" id="1_creditos"]
+
+[node name="Creditos" type="Control" unique_id=1357544764]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_creditos")
+
+[node name="ColorFundo" type="ColorRect" parent="." unique_id=1821536945]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.06, 0.07, 0.08, 1)
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1923508151]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxPrincipal" type="VBoxContainer" parent="CenterContainer" unique_id=2036397959]
+custom_minimum_size = Vector2(700, 0)
+layout_mode = 2
+theme_override_constants/separation = 28
+
+[node name="LabelTitulo" type="Label" parent="CenterContainer/VBoxPrincipal" unique_id=1778909701]
+layout_mode = 2
+theme_override_font_sizes/font_size = 44
+text = "CRÉDITOS"
+horizontal_alignment = 1
+
+[node name="LabelSubtitulo" type="Label" parent="CenterContainer/VBoxPrincipal" unique_id=433912848]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.72, 0.78, 1)
+theme_override_font_sizes/font_size = 18
+text = "O IMPÉRIO VÍRGULA — DOCUMENTO DE DESIGN DE JOGO"
+horizontal_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="CenterContainer/VBoxPrincipal" unique_id=1452894101]
+layout_mode = 2
+
+[node name="PanelCreditos" type="PanelContainer" parent="CenterContainer/VBoxPrincipal" unique_id=1006000152]
+layout_mode = 2
+
+[node name="MarginCreditos" type="MarginContainer" parent="CenterContainer/VBoxPrincipal/PanelCreditos" unique_id=1881385057]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxEquipe" type="VBoxContainer" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos" unique_id=1422693760]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="VBoxProg" type="VBoxContainer" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe" unique_id=1539852905]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelCargoProg" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxProg" unique_id=435317057]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.82, 0.4, 1)
+theme_override_font_sizes/font_size = 20
+text = "PROGRAMAÇÃO"
+
+[node name="LabelNomesProg" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxProg" unique_id=846529525]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Davi, Rodri, Andre e Marcelo"
+
+[node name="LabelDetalhesProg" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxProg" unique_id=1754242]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.65, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Sistema de seleção de fases, lógica de validação de texto e persistência de dados. O Gemini foi utilizado 
+para asistencia e estruturamento do código."
+
+[node name="HSeparatorEquipe" type="HSeparator" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe" unique_id=321699426]
+layout_mode = 2
+
+[node name="VBoxArte" type="VBoxContainer" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe" unique_id=1575436877]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="LabelCargoArte" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxArte" unique_id=1650292047]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.82, 0.4, 1)
+theme_override_font_sizes/font_size = 20
+text = "ARTE & ÁUDIO"
+
+[node name="LabelNomesArte" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxArte" unique_id=496865607]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Marcelo e Buri"
+
+[node name="LabelDetalhesArte" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxArte" unique_id=1017927038]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.65, 0.7, 1)
+theme_override_font_sizes/font_size = 14
+text = "Arte e visual geral, com excessão da musica tema que foi feita com o SUNO Ai 
+"
+
+[node name="LabelCargoArte" type="Label" parent="CenterContainer/VBoxPrincipal/PanelCreditos/MarginCreditos/VBoxEquipe/VBoxArte/LabelDetalhesArte" unique_id=727293435]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 28.0
+offset_right = 99.0
+offset_bottom = 43.0
+theme_override_colors/font_color = Color(0.92, 0.82, 0.4, 1)
+theme_override_font_sizes/font_size = 20
+text = "#As imagens que aparecem ao ativar o modo AI SLOP foram feitas utilizando o GEMINI"
+
+[node name="BotaoVoltar" type="Button" parent="CenterContainer/VBoxPrincipal" unique_id=1085699834]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "← VOLTAR AO MENU PRINCIPAL"

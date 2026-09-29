@@ -1,0 +1,158 @@
+[gd_scene format=3 uid="uid://df58y3q8p2012"]
+
+[ext_resource type="Script" path="res://intro_lore.gd" id="1_lore"]
+[ext_resource type="Theme" path="res://tema_pixel.tres" id="2_tema"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel"]
+bg_color = Color(0.04, 0.05, 0.07, 0.98)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.75, 0.22, 0.22, 0.9)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_normal"]
+bg_color = Color(0.68, 0.12, 0.12, 0.92)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.35, 0.35, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_hover"]
+bg_color = Color(0.88, 0.18, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.6, 0.6, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_btn_pressed"]
+bg_color = Color(0.5, 0.08, 0.08, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.2, 0.2, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="IntroLore" type="Control" unique_id=718293041]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_tema")
+script = ExtResource("1_lore")
+
+[node name="FundoPreto" type="ColorRect" parent="." unique_id=718293042]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ContainerCentro" type="CenterContainer" parent="." unique_id=718293043]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PainelLore" type="PanelContainer" parent="ContainerCentro" unique_id=718293044]
+custom_minimum_size = Vector2(1160, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel")
+
+[node name="MargemLore" type="MarginContainer" parent="ContainerCentro/PainelLore" unique_id=718293045]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 45
+
+[node name="VBoxLore" type="VBoxContainer" parent="ContainerCentro/PainelLore/MargemLore" unique_id=718293046]
+layout_mode = 2
+theme_override_constants/separation = 26
+
+[node name="LabelCabecalho" type="Label" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293047]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9, 0.78, 0.38, 1)
+theme_override_font_sizes/font_size = 20
+text = "[ TRANSMISSÃO CONFIDENCIAL // CHANCELARIA IMPERIAL ]"
+horizontal_alignment = 1
+
+[node name="Separador1" type="HSeparator" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293048]
+layout_mode = 2
+
+[node name="TextoLore" type="RichTextLabel" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293049]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/line_separation = 10
+theme_override_font_sizes/normal_font_size = 23
+theme_override_font_sizes/bold_font_size = 23
+bbcode_enabled = true
+text = "[center][color=#e5c158]Você é o Revisor Oficial da Chancelaria Imperial.[/color]
+
+Seu trabalho é carimbar e validar os decretos do regime.
+Mas sua lealdade pertence à [color=#55e080]Resistência[/color].
+
+Sem armas ou discursos, sua única ferramenta é o teclado:
+[color=#ffffff]mova uma vírgula, troque um acento[/color] e subverta as ordens do Império antes que a imprensa vá às ruas.[/center]"
+fit_content = true
+
+[node name="Separador2" type="HSeparator" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293050]
+layout_mode = 2
+
+[node name="DicaEspaco" type="Label" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293051]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.78, 1)
+theme_override_font_sizes/font_size = 14
+text = "[ Pressione ESPAÇO ou clique no botão para assumir seu posto ]"
+horizontal_alignment = 1
+
+[node name="HBoxBotao" type="HBoxContainer" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore" unique_id=718293052]
+layout_mode = 2
+alignment = 1
+
+[node name="BotaoContinuar" type="Button" parent="ContainerCentro/PainelLore/MargemLore/VBoxLore/HBoxBotao" unique_id=718293053]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(440, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+theme_override_styles/hover = SubResource("StyleBoxFlat_btn_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_btn_pressed")
+theme_override_styles/normal = SubResource("StyleBoxFlat_btn_normal")
+text = "ASSUMIR POSTO DE TRABALHO"
+
+[node name="FundoFade" type="ColorRect" parent="." unique_id=718293054]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

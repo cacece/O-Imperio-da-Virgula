@@ -1,0 +1,17 @@
+[gd_resource type="Theme" format=3]
+
+[ext_resource type="FontFile" path="res://assets/fonts/pixel_font.ttf" id="1_a1r8l"]
+[ext_resource type="FontFile" path="res://assets/fonts/pixel_font_bold.ttf" id="2_bo6j6"]
+
+[resource]
+default_font = ExtResource("1_a1r8l")
+default_font_size = 18
+Button/fonts/font = ExtResource("1_a1r8l")
+Label/fonts/font = ExtResource("1_a1r8l")
+LineEdit/fonts/font = ExtResource("1_a1r8l")
+RichTextLabel/fonts/bold_font = ExtResource("2_bo6j6")
+RichTextLabel/fonts/bold_italics_font = ExtResource("2_bo6j6")
+RichTextLabel/fonts/italics_font = ExtResource("1_a1r8l")
+RichTextLabel/fonts/mono_font = ExtResource("1_a1r8l")
+RichTextLabel/fonts/normal_font = ExtResource("1_a1r8l")
+TextEdit/fonts/font = ExtResource("1_a1r8l")

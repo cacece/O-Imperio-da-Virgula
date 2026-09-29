@@ -1,8 +1,95 @@
-[gd_scene format=3 uid="uid://d2ybqrw6vovev"]
+[gd_scene format=3 uid="uid://dyp32vq487gx3"]
 
 [ext_resource type="Script" uid="uid://bir06248xdxyf" path="res://TelaTrabalho.gd" id="1_lkmtu"]
+[ext_resource type="Texture2D" uid="uid://b47u3ws8nvahe" path="res://assets/mesa_do_jogo.png" id="2_mesa"]
+[ext_resource type="Texture2D" uid="uid://crayuah5laplm" path="res://assets/mao_esquerda.png" id="3_maoe"]
+[ext_resource type="Texture2D" uid="uid://beslle5rqquk5" path="res://assets/mao_direita.png" id="4_maod"]
+[ext_resource type="Texture2D" uid="uid://c74njr5np0hca" path="res://luz_redonda.tres" id="5_luz"]
+[ext_resource type="Texture2D" uid="uid://dxdvn71svwih1" path="res://assets/foto_mulher.png" id="6_foto"]
 
-[node name="TelaTrabalho" type="Control" unique_id=1463029971]
+[sub_resource type="Animation" id="Animation_digita"]
+resource_name = "digitando"
+length = 2.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MaoEsquerda:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.22, 0.4, 0.52, 0.9, 1.02, 1.3, 1.42, 1.7, 1.8, 1.9, 2.02, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(300, 885), Vector2(300, 900), Vector2(300, 885), Vector2(290, 898), Vector2(300, 885), Vector2(300, 896), Vector2(300, 885), Vector2(308, 901), Vector2(300, 885), Vector2(300, 898), Vector2(300, 889), Vector2(300, 900), Vector2(300, 885), Vector2(300, 885)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MaoEsquerda:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.22, 0.4, 0.52, 0.9, 1.02, 1.3, 1.42, 1.7, 1.9, 2.02, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.0261799, 0.0, -0.0349066, 0.0, 0.0174533, 0.0, -0.0174533, 0.0, -0.0261799, -0.0261799, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MaoDireita:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.6, 0.72, 1.05, 1.17, 1.45, 1.57, 2.05, 2.17, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(740, 885), Vector2(748, 900), Vector2(740, 885), Vector2(732, 901), Vector2(740, 885), Vector2(740, 900), Vector2(740, 885), Vector2(752, 899), Vector2(740, 885), Vector2(734, 901), Vector2(740, 885), Vector2(740, 885)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MaoDireita:rotation")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.37, 0.6, 0.72, 1.05, 1.17, 1.45, 1.57, 2.05, 2.17, 2.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0261799, 0.0, 0.0174533, 0.0, 0.0349066, 0.0, 0.0174533, 0.0, 0.0261799, 0.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hands"]
+_data = {
+&"digitando": SubResource("Animation_digita")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vermelho"]
+bg_color = Color(0.68, 0.12, 0.12, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.35, 0.35, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vermelho_hover"]
+bg_color = Color(0.88, 0.18, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.55, 0.55, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="TelaTrabalho" type="Control" unique_id=581569589]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,36 +98,506 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lkmtu")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1252230603]
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=726671743]
+color = Color(0.517647, 0.501961, 0.501961, 1)
+
+[node name="SpriteMesa" type="TextureRect" parent="." unique_id=1304466564]
+texture_filter = 1
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.20052083
-anchor_top = 0.17283951
-anchor_right = 0.8090278
-anchor_bottom = 0.7098765
-offset_bottom = 3.0517578e-05
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 4
-metadata/_edit_use_anchors_ = true
+texture = ExtResource("2_mesa")
+expand_mode = 1
 
-[node name="LabelPostIt" type="Label" parent="VBoxContainer" unique_id=1926475827]
-layout_mode = 2
-text = "Pista: O pavio precisa continuar aceso hoje à noite."
+[node name="BotaoVoltar" type="Button" parent="." unique_id=2144219048]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 264.0
+offset_bottom = 74.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_vermelho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vermelho_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vermelho")
+text = "← Seleção de Missões"
+
+[node name="PostItArea" type="Control" parent="." unique_id=604830645]
+layout_mode = 1
+anchors_preset = 0
+offset_left = 1225.0
+offset_top = 725.0
+offset_right = 1445.0
+offset_bottom = 835.0
+
+[node name="FotoMulher" type="TextureRect" parent="PostItArea" unique_id=2037572383]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 6.0
+offset_top = 6.0
+offset_right = -6.0
+offset_bottom = -6.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_foto")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="AreaMonitor" type="Control" parent="." unique_id=1179281329]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 0
+offset_left = 385.0
+offset_top = 140.0
+offset_right = 1385.0
+offset_bottom = 730.0
+
+[node name="DesktopMonitor" type="Control" parent="AreaMonitor" unique_id=1336473149]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BotaoPasta" type="Button" parent="AreaMonitor/DesktopMonitor" unique_id=1266441875]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -110.0
+offset_right = 140.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="LabelPasta" type="Label" parent="AreaMonitor/DesktopMonitor/BotaoPasta" unique_id=344521895]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = 6.0
+offset_right = 40.0
+offset_bottom = 46.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "DECRETOS_IMPERIAIS.DOC
+(Clique para abrir)"
 horizontal_alignment = 1
 
-[node name="CampoDecreto" type="LineEdit" parent="VBoxContainer" unique_id=1201739789]
+[node name="JanelaTerminal" type="PanelContainer" parent="AreaMonitor" unique_id=738448213]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginTerminal" type="MarginContainer" parent="AreaMonitor/JanelaTerminal" unique_id=218250108]
 layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxTerminal" type="VBoxContainer" parent="AreaMonitor/JanelaTerminal/MarginTerminal" unique_id=709822677]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BarraJanela" type="HBoxContainer" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=1822099841]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BotaoFecharJanela" type="Button" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/BarraJanela" unique_id=1681383344]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(110, 34)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 16
+theme_override_styles/normal = SubResource("StyleBoxFlat_vermelho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vermelho_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vermelho")
+text = "[X] Fechar"
+
+[node name="LabelTituloJanela" type="Label" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/BarraJanela" unique_id=740693853]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 20
+text = "TERMINAL IMPERIAL #084 — REVISÃO DE DECRETO"
+
+[node name="LabelProgressoMissao" type="Label" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/BarraJanela" unique_id=401867909]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "Finais: 0 / 6"
+
+[node name="HSeparator" type="HSeparator" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=506718274]
+layout_mode = 2
+
+[node name="LabelTituloMissao" type="Label" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=2049529617]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Missão 01: O Rebelde — Execução Pública"
+
+[node name="LabelContexto" type="Label" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=401369347]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.72, 0.76, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+text = "Contexto da missão..."
+autowrap_mode = 2
+
+[node name="VBoxEdicao" type="VBoxContainer" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=1763934902]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="CampoDecreto" type="LineEdit" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/VBoxEdicao" unique_id=1754381423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
 text = "Perdão impossível, executar o rebelde."
 alignment = 1
 
-[node name="BotaoEnviar" type="Button" parent="VBoxContainer" unique_id=976357241]
+[node name="BotaoEnviar" type="Button" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/VBoxEdicao" unique_id=1013829251]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 48)
 layout_mode = 2
-text = "Publicar Decreto"
+theme_override_font_sizes/font_size = 20
+text = "PUBLICAR DECRETO OFICIAL"
 
-[node name="TextoJornal" type="RichTextLabel" parent="VBoxContainer" unique_id=1930042324]
-custom_minimum_size = Vector2(0, 150)
+[node name="LabelSecaoJornal" type="Label" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=1197282526]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.65, 0.7, 1)
+theme_override_font_sizes/font_size = 16
+text = "Transmissão da Imprensa Oficial / Manchete de Jornal:"
+
+[node name="PanelJornal" type="PanelContainer" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal" unique_id=1742512657]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginJornal" type="MarginContainer" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/PanelJornal" unique_id=347813809]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 8
+
+[node name="TextoJornal" type="RichTextLabel" parent="AreaMonitor/JanelaTerminal/MarginTerminal/VBoxTerminal/PanelJornal/MarginJornal" unique_id=1519388262]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 18
+theme_override_font_sizes/bold_font_size = 20
+theme_override_font_sizes/italics_font_size = 18
+theme_override_font_sizes/bold_italics_font_size = 20
+theme_override_font_sizes/mono_font_size = 18
 bbcode_enabled = true
 text = "Aguardando publicação do decreto..."
-fit_content = true
+
+[node name="MaoEsquerda" type="TextureRect" parent="." unique_id=1771171843]
+texture_filter = 1
+layout_mode = 0
+offset_left = 300.0
+offset_top = 885.0
+offset_right = 668.0
+offset_bottom = 1210.0
+mouse_filter = 2
+texture = ExtResource("3_maoe")
+expand_mode = 1
+
+[node name="MaoDireita" type="TextureRect" parent="." unique_id=1406847198]
+texture_filter = 1
+layout_mode = 0
+offset_left = 740.0
+offset_top = 885.0
+offset_right = 1108.0
+offset_bottom = 1210.0
+mouse_filter = 2
+texture = ExtResource("4_maod")
+expand_mode = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1910926560]
+position = Vector2(855.00006, 476)
+scale = Vector2(1.3617622, 1.1070963)
+texture = ExtResource("5_luz")
+texture_scale = 18.0
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=398366650]
+position = Vector2(1187.0001, 875.99994)
+scale = Vector2(0.17187499, 0.09722215)
+color = Color(1, 0, 0, 1)
+energy = 1.3
+texture = ExtResource("5_luz")
+texture_scale = 18.0
+
+[node name="PointLight2D3" type="PointLight2D" parent="." unique_id=1307544299]
+position = Vector2(1205.0001, 951)
+scale = Vector2(0.1974826, 0.07118047)
+color = Color(1, 0, 0, 1)
+energy = 1.3
+texture = ExtResource("5_luz")
+texture_scale = 18.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=684276552]
+libraries/ = SubResource("AnimationLibrary_hands")
+autoplay = &"digitando"
+
+[node name="BotaoCola" type="Button" parent="." unique_id=918273645]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -120.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 100.0
+grow_horizontal = 0
+focus_mode = 0
+mouse_default_cursor_shape = 2
+flat = true
+
+[node name="JanelaCola" type="PanelContainer" parent="." unique_id=827364519]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -580.0
+offset_top = -420.0
+offset_right = 580.0
+offset_bottom = 420.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginCola" type="MarginContainer" parent="JanelaCola" unique_id=736451928]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxCola" type="VBoxContainer" parent="JanelaCola/MarginCola" unique_id=645192837]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxColaTopo" type="HBoxContainer" parent="JanelaCola/MarginCola/VBoxCola" unique_id=519283746]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelTituloCola" type="Label" parent="JanelaCola/MarginCola/VBoxCola/HBoxColaTopo" unique_id=419283756]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 22
+text = "ARQUIVO SECRETO DE CENSURA — GABARITO DE FINAIS (COLA)"
+
+[node name="BotaoFecharCola" type="Button" parent="JanelaCola/MarginCola/VBoxCola/HBoxColaTopo" unique_id=319283765]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(100, 36)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_vermelho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vermelho_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vermelho")
+text = "[X] Fechar"
+
+[node name="HSeparatorCola" type="HSeparator" parent="JanelaCola/MarginCola/VBoxCola" unique_id=219283774]
+layout_mode = 2
+
+[node name="ScrollCola" type="ScrollContainer" parent="JanelaCola/MarginCola/VBoxCola" unique_id=119283783]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="ContainerFinaisCola" type="VBoxContainer" parent="JanelaCola/MarginCola/VBoxCola/ScrollCola" unique_id=982736412]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 10
+
+[node name="CamadaAISlop" type="CanvasLayer" parent="." unique_id=9876543210]
+unique_name_in_owner = true
+layer = 20
+visible = false
+
+[node name="FundoFade" type="ColorRect" parent="CamadaAISlop" unique_id=9876543211]
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.03, 0.04, 1)
+
+[node name="TelaTempoDepois" type="Control" parent="CamadaAISlop" unique_id=9876543212]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LabelTempoDepois" type="Label" parent="CamadaAISlop/TelaTempoDepois" unique_id=9876543213]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -400.0
+offset_top = -40.0
+offset_right = 400.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 42
+text = "Um tempo depois..."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TelaFinalCinematica" type="Control" parent="CamadaAISlop" unique_id=9876543214]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxCinematica" type="VBoxContainer" parent="CamadaAISlop/TelaFinalCinematica" unique_id=9876543215]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -550.0
+offset_top = -460.0
+offset_right = 550.0
+offset_bottom = 460.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="TopCard" type="PanelContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica" unique_id=9876543216]
+layout_mode = 2
+
+[node name="MarginTop" type="MarginContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/TopCard" unique_id=9876543217]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxTexto" type="VBoxContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/TopCard/MarginTop" unique_id=9876543218]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="LabelTipoFinal" type="Label" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/TopCard/MarginTop/VBoxTexto" unique_id=9876543219]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "★ DESFECHO DO DECRETO"
+
+[node name="LabelTituloFinal" type="Label" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/TopCard/MarginTop/VBoxTexto" unique_id=9876543220]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 24
+text = "TÍTULO DA MANCHETE"
+
+[node name="LabelDescricaoFinal" type="Label" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/TopCard/MarginTop/VBoxTexto" unique_id=9876543221]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.88, 0.92, 1)
+theme_override_font_sizes/font_size = 18
+text = "Descrição do desfecho histórico gerado pela sua decisão..."
+autowrap_mode = 2
+
+[node name="FrameImagemFinal" type="PanelContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica" unique_id=9876543222]
+custom_minimum_size = Vector2(1100, 560)
+layout_mode = 2
+
+[node name="TextureRectFinal" type="TextureRect" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/FrameImagemFinal" unique_id=9876543223]
+unique_name_in_owner = true
+texture_filter = 1
+layout_mode = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PlaceholderFinal" type="CenterContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/FrameImagemFinal" unique_id=9876543224]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxPlaceholder" type="VBoxContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/FrameImagemFinal/PlaceholderFinal" unique_id=9876543225]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="LabelPlaceholderTitulo" type="Label" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/FrameImagemFinal/PlaceholderFinal/VBoxPlaceholder" unique_id=9876543226]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.88, 0.25, 1)
+theme_override_font_sizes/font_size = 28
+text = "COLOCAR IMAGEM FINAL X MISSAO X"
+horizontal_alignment = 1
+
+[node name="LabelPlaceholderCaminho" type="Label" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/FrameImagemFinal/PlaceholderFinal/VBoxPlaceholder" unique_id=9876543227]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.75, 1)
+theme_override_font_sizes/font_size = 16
+text = "(res://assets/finais/missao_X_final_X.png)"
+horizontal_alignment = 1
+
+[node name="CenterBotao" type="CenterContainer" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica" unique_id=9876543228]
+layout_mode = 2
+
+[node name="BotaoContinuarFinal" type="Button" parent="CamadaAISlop/TelaFinalCinematica/VBoxCinematica/CenterBotao" unique_id=9876543229]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 50)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_vermelho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vermelho_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vermelho")
+text = "CONTINUAR"
+
+

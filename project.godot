@@ -11,9 +11,25 @@ config_version=5
 [application]
 
 config/name="O-Império-Virgula"
-run/main_scene="uid://d2ybqrw6vovev"
+run/main_scene="res://menu_principal.tscn"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManager="*res://game_manager.gd"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[gui]
+
+theme/default_font_antialiasing=0
+theme/custom="res://tema_pixel.tres"
+theme/custom_font="res://assets/fonts/pixel_font.ttf"
 
 [physics]
 

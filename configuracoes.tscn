@@ -1,0 +1,403 @@
+[gd_scene format=3 uid="uid://c4k78wam216aa"]
+
+[ext_resource type="Script" path="res://configuracoes.gd" id="1_script"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vermelho"]
+bg_color = Color(0.68, 0.12, 0.12, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.95, 0.35, 0.35, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vermelho_hover"]
+bg_color = Color(0.88, 0.18, 0.18, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.55, 0.55, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_painel_escuro"]
+bg_color = Color(0.06, 0.07, 0.09, 0.95)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.28, 0.32, 0.38, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_item_config"]
+bg_color = Color(0.1, 0.12, 0.15, 0.9)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.24, 0.28, 0.34, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[node name="Configuracoes" type="Control" unique_id=817263541]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_script")
+
+[node name="FundoPreto" type="ColorRect" parent="." unique_id=817263542]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.03, 0.03, 0.04, 1)
+
+[node name="BotaoVoltar" type="Button" parent="." unique_id=817263543]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 40.0
+offset_top = 28.0
+offset_right = 260.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_vermelho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_vermelho_hover")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vermelho")
+text = "← Menu Principal"
+
+[node name="LabelTitulo" type="Label" parent="." unique_id=817263544]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 26.0
+offset_right = 1880.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 32
+text = "SISTEMA IMPERIAL — CONFIGURAÇÕES"
+vertical_alignment = 1
+
+[node name="HSeparatorTopo" type="HSeparator" parent="." unique_id=817263545]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 88.0
+offset_right = 1880.0
+offset_bottom = 98.0
+
+[node name="PainelCentral" type="PanelContainer" parent="." unique_id=817263546]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -410.0
+offset_right = 540.0
+offset_bottom = 440.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_painel_escuro")
+
+[node name="Margin" type="MarginContainer" parent="PainelCentral" unique_id=817263547]
+layout_mode = 2
+theme_override_constants/margin_left = 38
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 38
+theme_override_constants/margin_bottom = 32
+
+[node name="VBoxPrincipal" type="VBoxContainer" parent="PainelCentral/Margin" unique_id=817263548]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LabelSecaoVideo" type="Label" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263549]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 22
+text = "[ MODO DE TELA & EXIBIÇÃO ]"
+
+[node name="PanelItemVideo" type="PanelContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263550]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_config")
+
+[node name="MarginVideo" type="MarginContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo" unique_id=817263551]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxVideo" type="VBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo/MarginVideo" unique_id=817263552]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxVideoLinha" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo/MarginVideo/VBoxVideo" unique_id=817263553]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelModoTela" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo/MarginVideo/VBoxVideo/HBoxVideoLinha" unique_id=817263554]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Formato de Exibição:"
+
+[node name="BotaoTelaCheia" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo/MarginVideo/VBoxVideo/HBoxVideoLinha" unique_id=817263555]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "TELA CHEIA: [ DESATIVADO ]"
+
+[node name="LabelTelaCheiaStatus" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemVideo/MarginVideo/VBoxVideo" unique_id=817263556]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.8, 1)
+theme_override_font_sizes/font_size = 14
+text = "O jogo está em modo Janela (1920x1080)."
+
+[node name="PanelItemAISlop" type="PanelContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263590]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_config")
+
+[node name="MarginAISlop" type="MarginContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop" unique_id=817263591]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxAISlop" type="VBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop/MarginAISlop" unique_id=817263592]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="HBoxAISlopLinha" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop/MarginAISlop/VBoxAISlop" unique_id=817263593]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelModoAISlop" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop/MarginAISlop/VBoxAISlop/HBoxAISlopLinha" unique_id=817263594]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 18
+text = "Imagens dos Finais (AI SLOP):"
+
+[node name="BotaoAISlop" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop/MarginAISlop/VBoxAISlop/HBoxAISlopLinha" unique_id=817263595]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(360, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "AI SLOP: [ DESATIVADO ]"
+
+[node name="LabelAISlopStatus" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemAISlop/MarginAISlop/VBoxAISlop" unique_id=817263596]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.75, 0.8, 1)
+theme_override_font_sizes/font_size = 14
+text = "Desativado: Finais serão exibidos diretamente no jornal da mesa."
+
+[node name="HSep1" type="HSeparator" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263557]
+layout_mode = 2
+
+[node name="LabelSecaoAudio" type="Label" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263558]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 22
+text = "[ CONTROLE DE VOLUME & ÁUDIO ]"
+
+[node name="PanelItemMaster" type="PanelContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263559]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_config")
+
+[node name="MarginMaster" type="MarginContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster" unique_id=817263560]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 14
+
+[node name="HBoxMaster" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster" unique_id=817263561]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelMaster" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster/HBoxMaster" unique_id=817263562]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Volume Geral (Master):"
+
+[node name="BtnMasterMenos" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster/HBoxMaster" unique_id=817263563]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "-"
+
+[node name="SliderMaster" type="HSlider" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster/HBoxMaster" unique_id=817263564]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="BtnMasterMais" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster/HBoxMaster" unique_id=817263565]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+"
+
+[node name="LabelMasterPct" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMaster/MarginMaster/HBoxMaster" unique_id=817263566]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="PanelItemMusica" type="PanelContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263567]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_config")
+
+[node name="MarginMusica" type="MarginContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica" unique_id=817263568]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 14
+
+[node name="HBoxMusica" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica" unique_id=817263569]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelMusica" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica/HBoxMusica" unique_id=817263570]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Trilha Sonora (Música):"
+
+[node name="BtnMusicaMenos" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica/HBoxMusica" unique_id=817263571]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "-"
+
+[node name="SliderMusica" type="HSlider" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica/HBoxMusica" unique_id=817263572]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="BtnMusicaMais" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica/HBoxMusica" unique_id=817263573]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+"
+
+[node name="LabelMusicaPct" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemMusica/MarginMusica/HBoxMusica" unique_id=817263574]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="PanelItemSFX" type="PanelContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263575]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_item_config")
+
+[node name="MarginSFX" type="MarginContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX" unique_id=817263576]
+layout_mode = 2
+theme_override_constants/margin_left = 22
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 22
+theme_override_constants/margin_bottom = 14
+
+[node name="HBoxSFX" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX" unique_id=817263577]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelSFX" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX/HBoxSFX" unique_id=817263578]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Efeitos Sonoros (SFX):"
+
+[node name="BtnSFXMenos" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX/HBoxSFX" unique_id=817263579]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "-"
+
+[node name="SliderSFX" type="HSlider" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX/HBoxSFX" unique_id=817263580]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.0
+max_value = 100.0
+step = 1.0
+value = 100.0
+
+[node name="BtnSFXMais" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX/HBoxSFX" unique_id=817263581]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(44, 40)
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "+"
+
+[node name="LabelSFXPct" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/PanelItemSFX/MarginSFX/HBoxSFX" unique_id=817263582]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(74, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 18
+text = "100%"
+horizontal_alignment = 1
+
+[node name="HSep2" type="HSeparator" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263583]
+layout_mode = 2
+
+[node name="HBoxRodape" type="HBoxContainer" parent="PainelCentral/Margin/VBoxPrincipal" unique_id=817263584]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="LabelAviso" type="Label" parent="PainelCentral/Margin/VBoxPrincipal/HBoxRodape" unique_id=817263585]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.35, 0.95, 0.45, 1)
+theme_override_font_sizes/font_size = 15
+text = "✔ Alterações salvas automaticamente no disco."
+
+[node name="BotaoRestaurarPadrao" type="Button" parent="PainelCentral/Margin/VBoxPrincipal/HBoxRodape" unique_id=817263586]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 46)
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Restaurar Padrões"

@@ -1,0 +1,218 @@
+[gd_scene format=3 uid="uid://d31djj1u10i8t"]
+
+[ext_resource type="Script" uid="uid://bmv5u6irp3cfd" path="res://selecao_missoes.gd" id="1_selecao"]
+[ext_resource type="Texture2D" uid="uid://4n6xtawcgl7r" path="res://assets/selecao_fundo.png" id="2_fundo"]
+[ext_resource type="Texture2D" uid="uid://ddis3bined62d" path="res://assets/fita_letreiro.png" id="3_fita"]
+[ext_resource type="Shader" uid="uid://4dcyxye78yt7" path="res://letreiro_marcado.gdshader" id="4_shader"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cima"]
+shader = ExtResource("4_shader")
+shader_parameter/speed = -0.35
+shader_parameter/repeat_x = 4.68293
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baixo"]
+shader = ExtResource("4_shader")
+shader_parameter/speed = 0.35
+shader_parameter/repeat_x = 4.68293
+
+[node name="SelecaoMissoes" type="Control" unique_id=987123456]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_selecao")
+
+[node name="SpriteFundo" type="TextureRect" parent="." unique_id=112233445]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fundo")
+expand_mode = 1
+
+[node name="LetreiroCima" type="TextureRect" parent="." unique_id=223344556]
+texture_filter = 1
+material = SubResource("ShaderMaterial_cima")
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 5.0
+offset_bottom = 40.0
+grow_horizontal = 2
+texture = ExtResource("3_fita")
+expand_mode = 1
+
+[node name="LetreiroBaixo" type="TextureRect" parent="." unique_id=334455667]
+texture_filter = 1
+material = SubResource("ShaderMaterial_baixo")
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_fita")
+expand_mode = 1
+
+[node name="TopBar" type="HBoxContainer" parent="." unique_id=445566778]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 60.0
+offset_top = 62.0
+offset_right = -60.0
+offset_bottom = 118.0
+grow_horizontal = 2
+theme_override_constants/separation = 20
+
+[node name="BotaoVoltar" type="Button" parent="TopBar" unique_id=556677889]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(250, 48)
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "← Voltar ao Menu"
+
+[node name="LabelTitulo" type="Label" parent="TopBar" unique_id=667788990]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 30
+text = "ARQUIVO DE DECRETOS IMPERIAIS"
+horizontal_alignment = 1
+
+[node name="LabelTotalFinais" type="Label" parent="TopBar" unique_id=778899001]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.92, 0.82, 0.4, 1)
+theme_override_font_sizes/font_size = 17
+text = "Progresso Geral: 0 / 30 Finais"
+horizontal_alignment = 2
+
+[node name="ContainerIcones" type="HBoxContainer" parent="." unique_id=889900112]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 70.0
+offset_top = 145.0
+offset_right = -70.0
+offset_bottom = 475.0
+grow_horizontal = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="PainelInfo" type="PanelContainer" parent="." unique_id=990011223]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 120.0
+offset_top = -585.0
+offset_right = -120.0
+offset_bottom = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MarginInfo" type="MarginContainer" parent="PainelInfo" unique_id=101112131]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxInfo" type="VBoxContainer" parent="PainelInfo/MarginInfo" unique_id=121314151]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="HBoxInfoTop" type="HBoxContainer" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=141516171]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="LabelInfoTitulo" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo/HBoxInfoTop" unique_id=161718191]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 44
+text = "Missão 01: O Rebelde — Execução Pública"
+
+[node name="LabelInfoStatus" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo/HBoxInfoTop" unique_id=181920212]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "[★ Objetivo Concluído]"
+
+[node name="HSeparatorInfo" type="HSeparator" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=202122232]
+layout_mode = 2
+
+[node name="LabelInfoContexto" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=222324252]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.8, 0.84, 0.88, 1)
+theme_override_font_sizes/font_size = 35
+text = "Contexto da missão selecionada..."
+autowrap_mode = 2
+
+[node name="LabelInfoDecretoBase" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=242526272]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.65, 0.7, 0.75, 1)
+theme_override_font_sizes/font_size = 35
+text = "Decreto Original: 'Perdão impossível, executar o rebelde.'"
+
+[node name="LabelInfoFinais" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=262728292]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.85, 0.35, 1)
+theme_override_font_sizes/font_size = 35
+text = "Finais Descobertos: 2 / 5"
+
+[node name="ScrollFinais" type="ScrollContainer" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=282930313]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="VBoxListaFinais" type="VBoxContainer" parent="PainelInfo/MarginInfo/VBoxInfo/ScrollFinais" unique_id=303132333]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+
+[node name="HBoxBotoesAcao" type="HBoxContainer" parent="PainelInfo/MarginInfo/VBoxInfo" unique_id=323334353]
+layout_mode = 2
+alignment = 2
+
+[node name="LabelInfoRequisito" type="Label" parent="PainelInfo/MarginInfo/VBoxInfo/HBoxBotoesAcao" unique_id=343536373]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9, 0.45, 0.45, 1)
+theme_override_font_sizes/font_size = 15
+
+[node name="BotaoAcessar" type="Button" parent="PainelInfo/MarginInfo/VBoxInfo/HBoxBotoesAcao" unique_id=363738393]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(280, 52)
+layout_mode = 2
+theme_override_font_sizes/font_size = 33
+text = "REVISAR DECRETO"
+
+[node name="FundoFade" type="ColorRect" parent="." unique_id=998877665]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
